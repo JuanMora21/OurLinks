@@ -13,7 +13,7 @@ class CreateSocialNetworksTable extends Migration
      */
     public function up()
     {
-        Schema::create('socialNetworks', function (Blueprint $table) {
+        Schema::create('social_networks', function (Blueprint $table) {
             $table->id();          
             $table->enum("tipo", ["Youtube", "Facebook", "Twitter","Instagram"]);
             $table->string('url', 256);
@@ -34,6 +34,6 @@ class CreateSocialNetworksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('socialNetworks');
+        Schema::dropIfExists('social_networks');
     }
 }

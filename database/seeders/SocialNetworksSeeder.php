@@ -18,7 +18,7 @@ class SocialNetworksSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         for($i=0; $i<5; $i++)
-            DB::table('socialNetworks')->insert([
+            DB::table('social_networks')->insert([
                 'tipo'   => $faker->randomElement(["Youtube", "Facebook", "Twitter","Instagram"]),
                 'url'     => $faker->url(),
                 'user_id' => 1,
