@@ -41,7 +41,9 @@ class SocialNetworkController extends Controller
     public function show($id)
     {
         $socialNetwork = SocialNetwork::find($id);
-        return response()->json(['data' => $socialNetwork], 200);
+        if($socialNetwork != null){
+            return response()->json(['data' => $socialNetwork], 200);
+        }
     }
 
     /**
@@ -54,7 +56,7 @@ class SocialNetworkController extends Controller
     public function update(Request $request, $id)
     {
         $socialNetwork = SocialNetwork::find($id);
-        
+
         $socialNetwork->update($request->all());
     
         return response()->json(['data' => $socialNetwork], 200);

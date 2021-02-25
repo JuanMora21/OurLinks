@@ -44,7 +44,9 @@ class LinkController extends Controller
     public function show($id)
     {
         $link = Link::find($id);
-        return response()->json(['data' => $link], 200);
+        if($link != null){
+            return response()->json(['data' => $link], 200);
+        }
     }
 
     /**
